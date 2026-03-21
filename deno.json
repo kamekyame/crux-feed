@@ -1,6 +1,7 @@
 {
   "tasks": {
     "dev": "deno serve -P --env --watch main.ts",
+    "dev:tunnel": "deno serve -P --env --watch --tunnel main.ts",
     "start": "deno serve -P --env main.ts",
     "tunnel": "deno serve -P --env --tunnel main.ts"
   },
@@ -18,5 +19,9 @@
         "allow": ["GOOGLE_API_KEY"]
       }
     }
+  },
+  "deploy": {
+    "org": "kamekyame",
+    "app": "crux-feed"
   }
 }
