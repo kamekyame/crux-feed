@@ -36,6 +36,8 @@ app.get("/", async (c) => {
   const feedTitle = createFeedTitle(reqQueryParams, res);
   const feed = new Feed({
     title: feedTitle,
+    link: "https://github.com/kamekyame/crux-feed",
+    feed: reqUrl.href,
   });
 
   const date = new Date(Date.UTC(
@@ -73,11 +75,15 @@ app.get("/", async (c) => {
       guid: id,
       link: cruxVisUrl,
       date: date,
-      content:
+      description:
         `LCP: ${lcp} (${lcpStatus}), INP: ${inp} (${inpStatus}), CLS: ${cls} (${clsStatus})`,
     });
   }
-  return new Response(feed.rss2());
+  return new Response(feed.rss2(), {
+    headers: {
+      "Content-Type": "application/rss+xml",
+    },
+  });
 });
 
 export default app;
