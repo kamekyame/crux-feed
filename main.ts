@@ -38,6 +38,7 @@ app.get("/", async (c) => {
     title: feedTitle,
     link: "https://github.com/kamekyame/crux-feed",
     feed: reqUrl.href,
+    ttl: 12 * 60, // 12 hours
   });
 
   const date = new Date(Date.UTC(
