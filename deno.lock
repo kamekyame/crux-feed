@@ -1,0 +1,41 @@
+{
+  "version": "5",
+  "specifiers": {
+    "jsr:@hono/hono@^4.12.8": "4.12.8",
+    "npm:crux-api@4": "4.0.0",
+    "npm:feed@^5.2.0": "5.2.0"
+  },
+  "jsr": {
+    "@hono/hono@4.12.8": {
+      "integrity": "1997fde8abf28e84d821c9c867229be020e268d4749397aec071305bf54db297"
+    }
+  },
+  "npm": {
+    "crux-api@4.0.0": {
+      "integrity": "sha512-c1vLzj11q2bPA7BmRQb5z//ekwObww4ab3ry5lnP5QRDuiwMAJc5ZyUejzVt5oNMPrF9UeSxCIbVJi9ncBHwWw=="
+    },
+    "feed@5.2.0": {
+      "integrity": "sha512-hgH6CCb+7+0c8PBlakI2KubG6R+Rb1MhpNcdvqUXZTBwBHf32piwY255diAkAmkGZ6AWlywOU88AkOgP9q8Rdw==",
+      "dependencies": [
+        "xml-js"
+      ]
+    },
+    "sax@1.6.0": {
+      "integrity": "sha512-6R3J5M4AcbtLUdZmRv2SygeVaM7IhrLXu9BmnOGmmACak8fiUtOsYNWUS4uK7upbmHIBbLBeFeI//477BKLBzA=="
+    },
+    "xml-js@1.6.11": {
+      "integrity": "sha512-7rVi2KMfwfWFl+GpPg6m80IVMWXLRjO+PxTq7V2CDhoGak0wzYzFgUY2m4XJ47OGdXd8eLE8EmwfAmdjw7lC1g==",
+      "dependencies": [
+        "sax"
+      ],
+      "bin": true
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@hono/hono@^4.12.8",
+      "npm:crux-api@4",
+      "npm:feed@^5.2.0"
+    ]
+  }
+}

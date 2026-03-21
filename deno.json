@@ -1,0 +1,22 @@
+{
+  "tasks": {
+    "dev": "deno serve -P --env --watch main.ts",
+    "start": "deno serve -P --env main.ts",
+    "tunnel": "deno serve -P --env --tunnel main.ts"
+  },
+  "imports": {
+    "@hono/hono": "jsr:@hono/hono@^4.12.8",
+    "crux-api": "npm:crux-api@^4.0.0",
+    "feed": "npm:feed@^5.2.0"
+  },
+  "permissions": {
+    "default": {
+      "net": {
+        "allow": ["chromeuxreport.googleapis.com:443"]
+      },
+      "env": {
+        "allow": ["GOOGLE_API_KEY"]
+      }
+    }
+  }
+}
