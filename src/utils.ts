@@ -1,4 +1,4 @@
-import { FormFactor, QueryRecordOptions, SuccessResponse } from "crux-api";
+import { FormFactor, HistoryResponse, QueryRecordOptions } from "crux-api";
 import { HTTPException } from "@hono/hono/http-exception";
 
 export type ViewType = "cwvsummary";
@@ -89,7 +89,7 @@ export function createQueryRecordOptions(
 
 export function createFeedTitle(
   queryParams: ReturnType<typeof parseQueryParams>,
-  response: SuccessResponse,
+  response: HistoryResponse,
 ) {
   const viewTypeString = viewTypeStringMap[queryParams.view];
   const identifierString = identifierStringMap[queryParams.identifier];
@@ -99,4 +99,16 @@ export function createFeedTitle(
     queryParams.url;
 
   return `${viewTypeString} Summary of this ${identifierString}(${normalizedUrl}) on ${deviceString}`;
+}
+
+export function getGrowthRateStatus(value: number, lastValue: number) {
+  const growthRate = (value - lastValue) / lastValue;
+
+  if (growthRate >= 0.2) {
+    return "but is regressing";
+  } else if (growthRate <= -0.2) {
+    return "and improving";
+  } else {
+    return "and stable";
+  }
 }

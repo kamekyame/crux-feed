@@ -1,23 +1,10 @@
+import { HistorgramTimeserie } from "crux-api";
+
 type Threshold = {
   /** good threshold value (good <> needs improvement) */
   good: number;
   /** needs improvement threshold value (needs improvement <> poor) */
   needs_improvement: number;
-};
-
-export const thresholds: Record<string, Threshold> = {
-  largest_contentful_paint: {
-    good: 2500,
-    needs_improvement: 4000,
-  },
-  interaction_to_next_paint: {
-    good: 200,
-    needs_improvement: 500,
-  },
-  cumulative_layout_shift: {
-    good: 0.1,
-    needs_improvement: 0.25,
-  },
 };
 
 export function getStatus(value: number, threshold: Threshold) {
@@ -28,4 +15,10 @@ export function getStatus(value: number, threshold: Threshold) {
   } else {
     return "poor";
   }
+}
+
+export function getThresholds(timeseries: HistorgramTimeserie[]) {
+  const good = timeseries[1].start;
+  const needs_improvement = timeseries[2].start;
+  return { good, needs_improvement };
 }
