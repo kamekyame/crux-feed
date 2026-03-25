@@ -42,7 +42,7 @@ app.get("/", async (c) => {
     ttl: 12 * 60, // 12 hours
   });
 
-  const cruxVisUrl = createCruxVisUrl(reqUrl.href.replace(reqUrl.origin, ""));
+  const cruxVisUrl = createCruxVisUrl(reqQueryParams);
 
   if (reqQueryParams.view === "cwvsummary") {
     const periods = record.collectionPeriods;

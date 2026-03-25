@@ -1,8 +1,9 @@
-import { FormFactor, HistoryResponse, QueryRecordOptions } from "crux-api";
+import { HistoryResponse, QueryRecordOptions } from "crux-api";
 import { HTTPException } from "@hono/hono/http-exception";
 
 export type ViewType = "cwvsummary";
 export type IdentifierType = "url" | "origin";
+export type DeviceType = "PHONE" | "TABLET" | "DESKTOP" | "ALL";
 
 const viewTypeStringMap = {
   cwvsummary: "Core Web Vitals",
@@ -17,7 +18,7 @@ const deviceStringMap = {
   PHONE: "phones",
   TABLET: "tablets",
   DESKTOP: "desktops",
-  ALL_FORM_FACTORS: "all devices",
+  ALL: "all devices",
 };
 
 export function parseViewTypes(view: string | null): ViewType {
@@ -40,7 +41,7 @@ export function parseIdentifierTypes(
   }
 }
 
-export function parseDeviceTypes(device: string | null): FormFactor {
+export function parseDeviceTypes(device: string | null): DeviceType {
   switch (device) {
     case "PHONE":
       return "PHONE";
@@ -50,7 +51,7 @@ export function parseDeviceTypes(device: string | null): FormFactor {
       return "DESKTOP";
     case "ALL":
     default:
-      return "ALL_FORM_FACTORS";
+      return "ALL";
   }
 }
 
@@ -82,7 +83,7 @@ export function createQueryRecordOptions(
     options.url = origin;
   }
 
-  options.formFactor = device;
+  options.formFactor = device === "ALL" ? "ALL_FORM_FACTORS" : device;
 
   return options;
 }
