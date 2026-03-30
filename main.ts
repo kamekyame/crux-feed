@@ -58,7 +58,8 @@ app.get("/", async (c) => {
     );
 
     periods.reverse().forEach((period, i) => {
-      if (i === periods.length - 1) return;
+      const idx = periods.length - 1 - i;
+      if (idx === 0) return;
 
       const firstDate = new Date(Date.UTC(
         period.firstDate.year,
@@ -73,34 +74,35 @@ app.get("/", async (c) => {
       ));
 
       const lcp = Number(
-        record.metrics.largest_contentful_paint?.percentilesTimeseries.p75s[i],
+        record.metrics.largest_contentful_paint?.percentilesTimeseries
+          .p75s[idx],
       );
       const lcpStatus = getStatus(lcp, lcpThresholds);
       const lastLcp = Number(
         record.metrics.largest_contentful_paint?.percentilesTimeseries
-          .p75s[i + 1],
+          .p75s[idx - 1],
       );
       const lspGrowthRateString = getGrowthRateStatus(lcp, lastLcp);
 
       const inp = Number(
         record.metrics.interaction_to_next_paint?.percentilesTimeseries
-          .p75s[i],
+          .p75s[idx],
       );
       const inpStatus = getStatus(inp, inpThresholds);
       const lastInp = Number(
         record.metrics.interaction_to_next_paint?.percentilesTimeseries
-          .p75s[i + 1],
+          .p75s[idx - 1],
       );
       const inpGrowthRateString = getGrowthRateStatus(inp, lastInp);
 
       const cls = Number(
         record.metrics.cumulative_layout_shift?.percentilesTimeseries
-          .p75s[i],
+          .p75s[idx],
       );
       const clsStatus = getStatus(cls, clsThresholds);
       const lastCls = Number(
         record.metrics.cumulative_layout_shift?.percentilesTimeseries
-          .p75s[i + 1],
+          .p75s[idx - 1],
       );
       const clsGrowthRateString = getGrowthRateStatus(cls, lastCls);
 
