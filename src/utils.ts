@@ -105,9 +105,9 @@ export function createFeedTitle(
 export function getGrowthRateStatus(value: number, lastValue: number) {
   const growthRate = (value - lastValue) / lastValue;
 
-  if (growthRate >= 0.2) {
+  if (growthRate >= 0.02) {
     return "but is regressing";
-  } else if (growthRate <= -0.2) {
+  } else if (growthRate <= -0.02) {
     return "and improving";
   } else {
     return "and stable";
