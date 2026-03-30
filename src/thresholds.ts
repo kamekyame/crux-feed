@@ -18,7 +18,7 @@ export function getStatus(value: number, threshold: Threshold) {
 }
 
 export function getThresholds(timeseries: HistorgramTimeserie[]) {
-  const good = timeseries[1].start;
-  const needs_improvement = timeseries[2].start;
+  const good = Number(timeseries[1].start);
+  const needs_improvement = Number(timeseries[2].start);
   return { good, needs_improvement };
 }
