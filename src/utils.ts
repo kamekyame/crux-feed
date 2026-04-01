@@ -1,5 +1,6 @@
 import { HistoryResponse, QueryRecordOptions } from "crux-api";
 import { HTTPException } from "@hono/hono/http-exception";
+import { HistoryResponse, MetricDate, QueryRecordOptions } from "crux-api";
 
 export type ViewType = "cwvsummary";
 export type IdentifierType = "url" | "origin";
@@ -112,4 +113,13 @@ export function getGrowthRateStatus(value: number, lastValue: number) {
   } else {
     return "and stable";
   }
+}
+
+export function convertMetricDate(date: MetricDate) {
+  const d = new Date(Date.UTC(
+    date.year,
+    date.month - 1,
+    date.day,
+  ));
+  return { date: d, dateString: d.toISOString().split("T")[0] };
 }

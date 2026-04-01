@@ -4,6 +4,7 @@ import { Feed } from "feed";
 import { createCruxVisUrl } from "./src/cruxvis.ts";
 import { getStatus, getThresholds } from "./src/thresholds.ts";
 import {
+  convertMetricDate,
   createFeedTitle,
   createQueryRecordOptions,
   getGrowthRateStatus,
@@ -61,17 +62,8 @@ app.get("/", async (c) => {
       const idx = periods.length - 1 - i;
       if (idx === 0) return;
 
-      const firstDate = new Date(Date.UTC(
-        period.firstDate.year,
-        period.firstDate.month - 1,
-        period.firstDate.day,
-      ));
-
-      const lastDate = new Date(Date.UTC(
-        period.lastDate.year,
-        period.lastDate.month - 1,
-        period.lastDate.day,
-      ));
+      const firstDate = convertMetricDate(period.firstDate);
+      const lastDate = convertMetricDate(period.lastDate);
 
       const lcp = Number(
         record.metrics.largest_contentful_paint?.percentilesTimeseries
@@ -112,16 +104,15 @@ app.get("/", async (c) => {
         `Visual Stability is ${clsStatus} ${clsGrowthRateString} - value: ${cls}`,
       ].join("<br>");
 
-      const id = lastDate.getTime().toString();
+      const id = lastDate.date.getTime().toString();
 
       feed.addItem({
-        title: `${feedTitle} from ${firstDate.toISOString().split("T")[0]} to ${
-          lastDate.toISOString().split("T")[0]
-        }`,
+        title:
+          `${feedTitle} from ${firstDate.dateString} to ${lastDate.dateString}`,
         id,
         guid: id,
         link: cruxVisUrl,
-        date: lastDate,
+        date: lastDate.date,
         description,
       });
     });
