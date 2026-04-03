@@ -1,5 +1,5 @@
 import { Threshold } from "#/src/thresholds.ts";
-import { createCanvas } from "@napi-rs/canvas";
+import { createCanvas, GlobalFonts } from "@napi-rs/canvas";
 import {
   CategoryScale,
   Chart,
@@ -14,6 +14,9 @@ import {
 } from "chart.js";
 import annotationPlugin from "chartjs-plugin-annotation";
 import { colord } from "colord";
+import { Buffer } from "node:buffer";
+
+import robotoFont from "#/fonts/Roboto-Regular.ttf" with { type: "bytes" };
 
 const colorMap = {
   good: colord("#0ccf6b"),
@@ -46,6 +49,9 @@ export function initChart() {
     annotationPlugin,
     customBackgroundColorPlugin,
   ]);
+
+  GlobalFonts.register(Buffer.from(robotoFont), "Roboto");
+  Chart.defaults.font.family = "Roboto";
 }
 
 export function normalizeByThreshold(value: number, threshold: Threshold) {
