@@ -14,9 +14,6 @@ import {
 } from "chart.js";
 import annotationPlugin from "chartjs-plugin-annotation";
 import { colord } from "colord";
-import { Buffer } from "node:buffer";
-
-import robotoFont from "#/fonts/Roboto-Regular.ttf" with { type: "bytes" };
 
 const colorMap = {
   good: colord("#0ccf6b"),
@@ -50,7 +47,7 @@ export function initChart() {
     customBackgroundColorPlugin,
   ]);
 
-  GlobalFonts.register(Buffer.from(robotoFont), "Roboto");
+  GlobalFonts.registerFromPath("./fonts/Roboto-Regular.ttf", "Roboto");
   Chart.defaults.font.family = "Roboto";
 }
 
