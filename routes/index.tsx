@@ -1,3 +1,4 @@
+import { queryHistoryRecord } from "#/src/cruxapi.ts";
 import { createCruxVisUrl } from "#/src/cruxvis.ts";
 import { getStatus, getThresholds } from "#/src/thresholds.ts";
 import {
@@ -8,16 +9,8 @@ import {
   parseQueryParams,
 } from "#/src/utils.ts";
 import { define } from "#/utils.ts";
-import { HttpError } from "fresh";
-import { createQueryHistoryRecord } from "crux-api";
 import { Feed } from "feed";
-
-// deno-lint-ignore no-explicit-any
-globalThis.window = globalThis as any;
-
-const queryRecord2 = createQueryHistoryRecord({
-  key: Deno.env.get("GOOGLE_API_KEY") as string,
-});
+import { HttpError } from "fresh";
 
 export const handler = define.handlers({
   async GET(c) {
@@ -26,7 +19,7 @@ export const handler = define.handlers({
     const reqQueryParams = parseQueryParams(reqUrl.searchParams);
     const CruxQueryOptions = createQueryRecordOptions(reqQueryParams);
 
-    const res = await queryRecord2(CruxQueryOptions);
+    const res = await queryHistoryRecord(CruxQueryOptions);
     if (!res) {
       throw new HttpError(400, "Failed to fetch data from CrUX API");
     }
