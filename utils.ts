@@ -1,3 +1,3 @@
-import { createDefine } from "@fresh/core";
+import { createDefine } from "fresh";
 
 export const define = createDefine();

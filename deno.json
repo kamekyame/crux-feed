@@ -8,11 +8,11 @@
   },
   "imports": {
     "#/": "./",
-    "@fresh/core": "jsr:@fresh/core@^2.2.2",
     "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.8",
     "@preact/signals": "npm:@preact/signals@^2.9.0",
     "crux-api": "npm:crux-api@^4.0.0",
     "feed": "npm:feed@^5.2.0",
+    "fresh": "jsr:@fresh/core@^2.2.2",
     "preact": "npm:preact@^10.29.0",
     "vite": "npm:vite@^7.3.1"
   },

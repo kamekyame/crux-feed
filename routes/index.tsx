@@ -8,7 +8,7 @@ import {
   parseQueryParams,
 } from "#/src/utils.ts";
 import { define } from "#/utils.ts";
-import { HttpError } from "@fresh/core";
+import { HttpError } from "fresh";
 import { createQueryHistoryRecord } from "crux-api";
 import { Feed } from "feed";
 

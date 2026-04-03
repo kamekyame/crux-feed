@@ -1,4 +1,4 @@
-import { App } from "@fresh/core";
+import { App } from "fresh";
 
 export const app = new App();
 

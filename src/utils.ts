@@ -1,4 +1,4 @@
-import { HttpError } from "@fresh/core";
+import { HttpError } from "fresh";
 import { HistoryResponse, MetricDate, QueryRecordOptions } from "crux-api";
 
 export type ViewType = "cwvsummary";
