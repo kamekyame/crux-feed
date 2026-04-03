@@ -88,13 +88,13 @@ export function createQueryRecordOptions(
 
 export function createFeedTitle(
   queryParams: ReturnType<typeof parseQueryParams>,
-  response: HistoryResponse,
+  response?: HistoryResponse,
 ) {
   const viewTypeString = viewTypeStringMap[queryParams.view];
   const identifierString = identifierStringMap[queryParams.identifier];
   const deviceString = deviceStringMap[queryParams.device];
 
-  const normalizedUrl = response.urlNormalizationDetails?.normalizedUrl ||
+  const normalizedUrl = response?.urlNormalizationDetails?.normalizedUrl ||
     queryParams.url;
 
   return `${viewTypeString} Summary of this ${identifierString}(${normalizedUrl}) on ${deviceString}`;

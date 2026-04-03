@@ -3,6 +3,7 @@
   "tasks": {
     "dev": "vite",
     "start": "deno serve -P --env _fresh/server.js",
+    "start:tunnel": "deno serve -P --env --tunnel _fresh/server.js",
     "build": "vite build",
     "update": "deno run -A -r jsr:@fresh/update ."
   },
@@ -67,8 +68,18 @@
         "allow": ["chromeuxreport.googleapis.com:443"]
       },
       "env": {
-        "allow": ["GOOGLE_API_KEY"]
-      }
+        "allow": ["GOOGLE_API_KEY"],
+        "ignore": [
+          "NAPI_RS_NATIVE_LIBRARY_PATH",
+          "NAPI_RS_FORCE_WASI",
+          "DISABLE_SYSTEM_FONTS_LOAD"
+        ]
+      },
+      "read": {
+        "allow": ["./_fresh/", "**@napi-rs**"]
+      },
+      "ffi": true,
+      "sys": true
     }
   },
   "deploy": {
