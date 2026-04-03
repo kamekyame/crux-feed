@@ -1,14 +1,60 @@
 {
+  "nodeModulesDir": "manual",
   "tasks": {
-    "dev": "deno serve -P --env --watch main.ts",
-    "dev:tunnel": "deno serve -P --env --watch --tunnel main.ts",
-    "start": "deno serve -P --env main.ts",
-    "tunnel": "deno serve -P --env --tunnel main.ts"
+    "dev": "vite",
+    "start": "deno serve -P --env _fresh/server.js",
+    "build": "vite build",
+    "update": "deno run -A -r jsr:@fresh/update ."
   },
   "imports": {
-    "@hono/hono": "jsr:@hono/hono@^4.12.8",
+    "#/": "./",
+    "@fresh/core": "jsr:@fresh/core@^2.2.2",
+    "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.8",
+    "@preact/signals": "npm:@preact/signals@^2.9.0",
     "crux-api": "npm:crux-api@^4.0.0",
-    "feed": "npm:feed@^5.2.0"
+    "feed": "npm:feed@^5.2.0",
+    "preact": "npm:preact@^10.29.0",
+    "vite": "npm:vite@^7.3.1"
+  },
+  "lint": {
+    "rules": {
+      "tags": [
+        "fresh",
+        "recommended"
+      ]
+    }
+  },
+  "exclude": [
+    "**/_fresh/*"
+  ],
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.asynciterable",
+      "dom.iterable",
+      "deno.ns"
+    ],
+    "jsx": "precompile",
+    "jsxImportSource": "preact",
+    "jsxPrecompileSkipElements": [
+      "a",
+      "img",
+      "source",
+      "body",
+      "html",
+      "head",
+      "title",
+      "meta",
+      "script",
+      "link",
+      "style",
+      "base",
+      "noscript",
+      "template"
+    ],
+    "types": [
+      "vite/client"
+    ]
   },
   "permissions": {
     "default": {

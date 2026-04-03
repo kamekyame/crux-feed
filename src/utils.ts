@@ -1,5 +1,4 @@
-import { HistoryResponse, QueryRecordOptions } from "crux-api";
-import { HTTPException } from "@hono/hono/http-exception";
+import { HttpError } from "@fresh/core";
 import { HistoryResponse, MetricDate, QueryRecordOptions } from "crux-api";
 
 export type ViewType = "cwvsummary";
@@ -59,9 +58,7 @@ export function parseDeviceTypes(device: string | null): DeviceType {
 export function parseQueryParams(searchParams: URLSearchParams) {
   const url = searchParams.get("url");
   if (!url) {
-    throw new HTTPException(400, {
-      message: "URL parameter is required",
-    });
+    throw new HttpError(400, "URL parameter is required");
   }
 
   const view = parseViewTypes(searchParams.get("view"));
