@@ -33,8 +33,6 @@ export const handler = define.handlers({
       ttl: 12 * 60, // 12 hours
     });
 
-    const cruxVisUrl = createCruxVisUrl(reqQueryParams);
-
     if (reqQueryParams.view === "cwvsummary") {
       const periods = record.collectionPeriods;
 
@@ -52,7 +50,6 @@ export const handler = define.handlers({
         const idx = periods.length - 1 - i;
         if (idx === 0) return;
 
-        const firstDate = convertMetricDate(period.firstDate);
         const lastDate = convertMetricDate(period.lastDate);
 
         const lcp = Number(
@@ -96,12 +93,16 @@ export const handler = define.handlers({
 
         const id = lastDate.date.getTime().toString();
 
+        const redirectPageUrl = new URL(
+          `${reqUrl.origin}/r?${reqUrl.searchParams.toString()}`,
+        );
+        redirectPageUrl.searchParams.set("asof", lastDate.dateString);
+
         feed.addItem({
-          title:
-            `${feedTitle} from ${firstDate.dateString} to ${lastDate.dateString}`,
+          title: `${feedTitle} as of ${lastDate.dateString}`,
           id,
           guid: id,
-          link: cruxVisUrl,
+          link: redirectPageUrl.href,
           date: lastDate.date,
           description,
         });
