@@ -1,6 +1,6 @@
 import { HistorgramTimeserie } from "crux-api";
 
-type Threshold = {
+export type Threshold = {
   /** good threshold value (good <> needs improvement) */
   good: number;
   /** needs improvement threshold value (needs improvement <> poor) */

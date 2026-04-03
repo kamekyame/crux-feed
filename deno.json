@@ -9,7 +9,12 @@
   "imports": {
     "#/": "./",
     "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.8",
+    "@napi-rs/canvas": "npm:@napi-rs/canvas@^0.1.97",
     "@preact/signals": "npm:@preact/signals@^2.9.0",
+    "@std/collections": "jsr:@std/collections@^1.1.6",
+    "chart.js": "npm:chart.js@^4.5.1",
+    "chartjs-plugin-annotation": "npm:chartjs-plugin-annotation@^3.1.0",
+    "colord": "npm:colord@^2.9.3",
     "crux-api": "npm:crux-api@^4.0.0",
     "feed": "npm:feed@^5.2.0",
     "fresh": "jsr:@fresh/core@^2.2.2",
