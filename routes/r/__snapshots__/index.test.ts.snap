@@ -1,0 +1,27 @@
+export const snapshot = {};
+
+snapshot[`return RSS 1`] = `
+<html>
+  <head prefix="og: http://ogp.me/ns#">
+    <title>Core Web Vitals Summary of this Origin(https://example.com/hoge) on all devices as of null</title>
+    <meta property="og:url" content="http://localhost/r?view=cwvsummary&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Core Web Vitals Summary of this Origin(https://example.com/hoge) on all devices as of null"/>
+    <meta property="og:site_name" content="CrUX Feed"/>
+    <meta property="og:image" content="http://localhost/i?view=cwvsummary&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s"/>
+    <meta name="robots" content="noindex, noffollow"/>
+  </head>
+  <body>
+    <h1>Core Web Vitals Summary of this Origin(https://example.com/hoge) on all devices as of null</h1>
+    <div>
+      <p>Redirecting to CrUX Vis in 1 second...</p>
+      <p>
+If you are not redirected automatically, please 
+        <a href="https://cruxvis.withgoogle.com/#/?url=https%3A%2F%2Fexample.com%2Fhoge&amp;view=cwvsummary&amp;identifier=origin&amp;device=ALL">click here</a>
+.
+      </p>
+    </div>
+    <script type="module" nonce="">import { boot } from &quot;&quot;;boot({},&quot;[[]]&quot;);</script>
+  </body>
+</html>
+`;
