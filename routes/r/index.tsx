@@ -21,6 +21,7 @@ export default define.page((c) => {
         <meta property="og:title" content={title} />
         <meta property="og:site_name" content="CrUX Feed" />
         <meta property="og:image" content={ogImageUrl} />
+        <meta name="robots" content="noindex, noffollow" />
       </head>
       <body>
         <h1>{title}</h1>
