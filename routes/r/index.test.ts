@@ -1,7 +1,7 @@
 import { assertXmlSnapshot, historyApiMock } from "#/tests/utils.ts";
 import { App } from "fresh";
 
-Deno.test("return RSS", async (t) => {
+Deno.test("return Redirect Page", async (t) => {
   using _ = historyApiMock();
 
   const handler = new App().get(
