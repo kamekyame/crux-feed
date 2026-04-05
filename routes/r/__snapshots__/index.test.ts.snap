@@ -1,6 +1,6 @@
 export const snapshot = {};
 
-snapshot[`return RSS 1`] = `
+snapshot[`return Redirect Page 1`] = `
 <html>
   <head prefix="og: http://ogp.me/ns#">
     <title>Core Web Vitals Summary of this Origin(https://example.com/hoge) on all devices as of null</title>
