@@ -1,5 +1,4 @@
 import { queryHistoryRecord } from "#/src/cruxapi.ts";
-import { createCruxVisUrl } from "#/src/cruxvis.ts";
 import { getStatus, getThresholds } from "#/src/thresholds.ts";
 import {
   convertMetricDate,
