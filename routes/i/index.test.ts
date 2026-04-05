@@ -2,7 +2,7 @@ import { historyApiMock } from "#/tests/utils.ts";
 import { assertEquals } from "@std/assert";
 import { App } from "fresh";
 
-Deno.test("return cwvsummary image", async (t) => {
+Deno.test("return cwvsummary image", async () => {
   using _ = historyApiMock();
 
   const handler = new App().get(
