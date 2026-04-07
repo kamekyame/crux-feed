@@ -8,6 +8,7 @@ import {
   parseQueryParams,
 } from "#/src/utils.ts";
 import { define } from "#/utils.ts";
+import { zip } from "@std/collections/zip";
 import { Feed } from "feed";
 import { HttpError } from "fresh";
 
@@ -33,8 +34,6 @@ export const handler = define.handlers({
     });
 
     if (reqQueryParams.view === "cwvsummary") {
-      const periods = record.collectionPeriods;
-
       const lcpThresholds = getThresholds(
         record.metrics.largest_contentful_paint?.histogramTimeseries ?? [],
       );
@@ -45,43 +44,38 @@ export const handler = define.handlers({
         record.metrics.cumulative_layout_shift?.histogramTimeseries ?? [],
       );
 
-      periods.reverse().forEach((period, i) => {
-        const idx = periods.length - 1 - i;
-        if (idx === 0) return;
+      const data = zip(
+        record.collectionPeriods,
+        record.metrics.largest_contentful_paint?.percentilesTimeseries
+          .p75s ?? [],
+        record.metrics.interaction_to_next_paint?.percentilesTimeseries
+          .p75s ?? [],
+        record.metrics.cumulative_layout_shift?.percentilesTimeseries
+          .p75s ?? [],
+      ).toReversed();
+
+      data.forEach((d, i) => {
+        const [period, lcpP75, inpP75, clsP75] = d;
+        const lastData = data[i + 1];
+        if (!lastData) return;
+        const [_, lastLcpP75, lastInpP75, lastClsP75] = lastData;
 
         const lastDate = convertMetricDate(period.lastDate);
 
-        const lcp = Number(
-          record.metrics.largest_contentful_paint?.percentilesTimeseries
-            .p75s[idx],
-        );
+        const lcp = Number(lcpP75);
         const lcpStatus = getStatus(lcp, lcpThresholds);
-        const lastLcp = Number(
-          record.metrics.largest_contentful_paint?.percentilesTimeseries
-            .p75s[idx - 1],
-        );
+        const lastLcp = Number(lastLcpP75);
+
         const lspGrowthRateString = getGrowthRateStatus(lcp, lastLcp);
 
-        const inp = Number(
-          record.metrics.interaction_to_next_paint?.percentilesTimeseries
-            .p75s[idx],
-        );
+        const inp = Number(inpP75);
         const inpStatus = getStatus(inp, inpThresholds);
-        const lastInp = Number(
-          record.metrics.interaction_to_next_paint?.percentilesTimeseries
-            .p75s[idx - 1],
-        );
+        const lastInp = Number(lastInpP75);
         const inpGrowthRateString = getGrowthRateStatus(inp, lastInp);
 
-        const cls = Number(
-          record.metrics.cumulative_layout_shift?.percentilesTimeseries
-            .p75s[idx],
-        );
+        const cls = Number(clsP75);
         const clsStatus = getStatus(cls, clsThresholds);
-        const lastCls = Number(
-          record.metrics.cumulative_layout_shift?.percentilesTimeseries
-            .p75s[idx - 1],
-        );
+        const lastCls = Number(lastClsP75);
         const clsGrowthRateString = getGrowthRateStatus(cls, lastCls);
 
         const description = [
