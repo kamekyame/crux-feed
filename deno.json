@@ -5,7 +5,9 @@
     "start": "deno serve -P --env _fresh/server.js",
     "start:tunnel": "deno serve -P --env --tunnel _fresh/server.js",
     "build": "vite build",
-    "update": "deno run -A -r jsr:@fresh/update ."
+    "update": "deno run -A -r jsr:@fresh/update .",
+    "test": "deno test -A",
+    "test:update": "deno test -A -- --update"
   },
   "imports": {
     "#/": "./",

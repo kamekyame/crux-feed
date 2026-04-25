@@ -1,12 +1,27 @@
 import { HttpError } from "fresh";
 import { HistoryResponse, MetricDate, QueryRecordOptions } from "crux-api";
 
-export type ViewType = "cwvsummary";
+export const supportViewType = [
+  "cwvsummary",
+  "lcp",
+  "inp",
+  "cls",
+  "fcp",
+  "ttfb",
+  "rtt",
+] as const;
+export type ViewType = (typeof supportViewType)[number];
 export type IdentifierType = "url" | "origin";
 export type DeviceType = "PHONE" | "TABLET" | "DESKTOP" | "ALL";
 
-const viewTypeStringMap = {
+export const viewTypeStringMap: Record<ViewType, string> = {
   cwvsummary: "Core Web Vitals",
+  lcp: "Largest Contentful Paint (LCP)",
+  inp: "Interaction to Next Paint (INP)",
+  cls: "Cumulative Layout Shift (CLS)",
+  fcp: "First Contentful Paint (FCP)",
+  ttfb: "Time to First Byte (TTFB)",
+  rtt: "Round Trip Time (RTT)",
 };
 
 const identifierStringMap = {
@@ -21,11 +36,28 @@ const deviceStringMap = {
   ALL: "all devices",
 };
 
+export const viewMetricMap = {
+  lcp: "largest_contentful_paint",
+  inp: "interaction_to_next_paint",
+  cls: "cumulative_layout_shift",
+  fcp: "first_contentful_paint",
+  ttfb: "experimental_time_to_first_byte",
+  rtt: "round_trip_time",
+} as const;
+
 export function parseViewTypes(view: string | null): ViewType {
-  switch (view) {
-    case "cwvsummary":
-    default:
-      return "cwvsummary";
+  if (supportViewType.includes(view as ViewType)) {
+    return view as ViewType;
+  } else if (view === "loadingperf") {
+    return "lcp";
+  } else if (view === "interactivity") {
+    return "inp";
+  } else if (view === "visstability") {
+    return "cls";
+  } else if (view === "allmetrics") {
+    return "lcp";
+  } else {
+    return "cwvsummary";
   }
 }
 
@@ -107,7 +139,11 @@ export function createFeedTitle(
   const normalizedUrl = response?.urlNormalizationDetails?.normalizedUrl ||
     queryParams.url;
 
-  return `${viewTypeString} Summary of this ${identifierString}(${normalizedUrl}) on ${deviceString}`;
+  if (queryParams.view === "cwvsummary") {
+    return `${viewTypeString} Summary of this ${identifierString}(${normalizedUrl}) on ${deviceString}`;
+  } else {
+    return `${viewTypeString} of this ${identifierString}(${normalizedUrl}) on ${deviceString}`;
+  }
 }
 
 export function getGrowthRateStatus(value: number, lastValue: number) {
@@ -129,4 +165,12 @@ export function convertMetricDate(date: MetricDate) {
     date.day,
   ));
   return { date: d, dateString: d.toISOString().split("T")[0] };
+}
+
+export function getMetric(
+  res: HistoryResponse,
+  view: Exclude<ViewType, "cwvsummary">,
+) {
+  const metricName = viewMetricMap[view];
+  return res.record.metrics[metricName];
 }

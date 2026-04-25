@@ -1,6 +1,6 @@
 export const snapshot = {};
 
-snapshot[`return Redirect Page 1`] = `
+snapshot[`cwvsummary 1`] = `
 <html>
   <head prefix="og: http://ogp.me/ns#">
     <title>Core Web Vitals Summary of this Origin(https://example.com/hoge) on all devices as of null</title>
@@ -18,6 +18,162 @@ snapshot[`return Redirect Page 1`] = `
       <p>
 If you are not redirected automatically, please 
         <a href="https://cruxvis.withgoogle.com/#/?url=https%3A%2F%2Fexample.com%2Fhoge&amp;view=cwvsummary&amp;identifier=origin&amp;device=ALL">click here</a>
+.
+      </p>
+    </div>
+    <script type="module" nonce="">import { boot } from &quot;&quot;;boot({},&quot;[[]]&quot;);</script>
+  </body>
+</html>
+`;
+
+snapshot[`lcp 1`] = `
+<html>
+  <head prefix="og: http://ogp.me/ns#">
+    <title>Largest Contentful Paint (LCP) of this Origin(https://example.com/hoge) on all devices as of null</title>
+    <meta property="og:url" content="http://localhost/r?view=lcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Largest Contentful Paint (LCP) of this Origin(https://example.com/hoge) on all devices as of null"/>
+    <meta property="og:site_name" content="CrUX Feed"/>
+    <meta property="og:image" content="http://localhost/i?view=lcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s"/>
+    <meta name="robots" content="noindex, noffollow"/>
+  </head>
+  <body>
+    <h1>Largest Contentful Paint (LCP) of this Origin(https://example.com/hoge) on all devices as of null</h1>
+    <div>
+      <p>Redirecting to CrUX Vis in 1 second...</p>
+      <p>
+If you are not redirected automatically, please 
+        <a href="https://cruxvis.withgoogle.com/#/?url=https%3A%2F%2Fexample.com%2Fhoge&amp;view=allmetrics&amp;identifier=origin&amp;device=ALL">click here</a>
+.
+      </p>
+    </div>
+    <script type="module" nonce="">import { boot } from &quot;&quot;;boot({},&quot;[[]]&quot;);</script>
+  </body>
+</html>
+`;
+
+snapshot[`inp 1`] = `
+<html>
+  <head prefix="og: http://ogp.me/ns#">
+    <title>Interaction to Next Paint (INP) of this Origin(https://example.com/hoge) on all devices as of null</title>
+    <meta property="og:url" content="http://localhost/r?view=inp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Interaction to Next Paint (INP) of this Origin(https://example.com/hoge) on all devices as of null"/>
+    <meta property="og:site_name" content="CrUX Feed"/>
+    <meta property="og:image" content="http://localhost/i?view=inp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s"/>
+    <meta name="robots" content="noindex, noffollow"/>
+  </head>
+  <body>
+    <h1>Interaction to Next Paint (INP) of this Origin(https://example.com/hoge) on all devices as of null</h1>
+    <div>
+      <p>Redirecting to CrUX Vis in 1 second...</p>
+      <p>
+If you are not redirected automatically, please 
+        <a href="https://cruxvis.withgoogle.com/#/?url=https%3A%2F%2Fexample.com%2Fhoge&amp;view=allmetrics&amp;identifier=origin&amp;device=ALL">click here</a>
+.
+      </p>
+    </div>
+    <script type="module" nonce="">import { boot } from &quot;&quot;;boot({},&quot;[[]]&quot;);</script>
+  </body>
+</html>
+`;
+
+snapshot[`cls 1`] = `
+<html>
+  <head prefix="og: http://ogp.me/ns#">
+    <title>Cumulative Layout Shift (CLS) of this Origin(https://example.com/hoge) on all devices as of null</title>
+    <meta property="og:url" content="http://localhost/r?view=cls&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Cumulative Layout Shift (CLS) of this Origin(https://example.com/hoge) on all devices as of null"/>
+    <meta property="og:site_name" content="CrUX Feed"/>
+    <meta property="og:image" content="http://localhost/i?view=cls&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s"/>
+    <meta name="robots" content="noindex, noffollow"/>
+  </head>
+  <body>
+    <h1>Cumulative Layout Shift (CLS) of this Origin(https://example.com/hoge) on all devices as of null</h1>
+    <div>
+      <p>Redirecting to CrUX Vis in 1 second...</p>
+      <p>
+If you are not redirected automatically, please 
+        <a href="https://cruxvis.withgoogle.com/#/?url=https%3A%2F%2Fexample.com%2Fhoge&amp;view=allmetrics&amp;identifier=origin&amp;device=ALL">click here</a>
+.
+      </p>
+    </div>
+    <script type="module" nonce="">import { boot } from &quot;&quot;;boot({},&quot;[[]]&quot;);</script>
+  </body>
+</html>
+`;
+
+snapshot[`fcp 1`] = `
+<html>
+  <head prefix="og: http://ogp.me/ns#">
+    <title>First Contentful Paint (FCP) of this Origin(https://example.com/hoge) on all devices as of null</title>
+    <meta property="og:url" content="http://localhost/r?view=fcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="First Contentful Paint (FCP) of this Origin(https://example.com/hoge) on all devices as of null"/>
+    <meta property="og:site_name" content="CrUX Feed"/>
+    <meta property="og:image" content="http://localhost/i?view=fcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s"/>
+    <meta name="robots" content="noindex, noffollow"/>
+  </head>
+  <body>
+    <h1>First Contentful Paint (FCP) of this Origin(https://example.com/hoge) on all devices as of null</h1>
+    <div>
+      <p>Redirecting to CrUX Vis in 1 second...</p>
+      <p>
+If you are not redirected automatically, please 
+        <a href="https://cruxvis.withgoogle.com/#/?url=https%3A%2F%2Fexample.com%2Fhoge&amp;view=allmetrics&amp;identifier=origin&amp;device=ALL">click here</a>
+.
+      </p>
+    </div>
+    <script type="module" nonce="">import { boot } from &quot;&quot;;boot({},&quot;[[]]&quot;);</script>
+  </body>
+</html>
+`;
+
+snapshot[`ttfb 1`] = `
+<html>
+  <head prefix="og: http://ogp.me/ns#">
+    <title>Time to First Byte (TTFB) of this Origin(https://example.com/hoge) on all devices as of null</title>
+    <meta property="og:url" content="http://localhost/r?view=ttfb&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Time to First Byte (TTFB) of this Origin(https://example.com/hoge) on all devices as of null"/>
+    <meta property="og:site_name" content="CrUX Feed"/>
+    <meta property="og:image" content="http://localhost/i?view=ttfb&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s"/>
+    <meta name="robots" content="noindex, noffollow"/>
+  </head>
+  <body>
+    <h1>Time to First Byte (TTFB) of this Origin(https://example.com/hoge) on all devices as of null</h1>
+    <div>
+      <p>Redirecting to CrUX Vis in 1 second...</p>
+      <p>
+If you are not redirected automatically, please 
+        <a href="https://cruxvis.withgoogle.com/#/?url=https%3A%2F%2Fexample.com%2Fhoge&amp;view=allmetrics&amp;identifier=origin&amp;device=ALL">click here</a>
+.
+      </p>
+    </div>
+    <script type="module" nonce="">import { boot } from &quot;&quot;;boot({},&quot;[[]]&quot;);</script>
+  </body>
+</html>
+`;
+
+snapshot[`rtt 1`] = `
+<html>
+  <head prefix="og: http://ogp.me/ns#">
+    <title>Round Trip Time (RTT) of this Origin(https://example.com/hoge) on all devices as of null</title>
+    <meta property="og:url" content="http://localhost/r?view=rtt&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Round Trip Time (RTT) of this Origin(https://example.com/hoge) on all devices as of null"/>
+    <meta property="og:site_name" content="CrUX Feed"/>
+    <meta property="og:image" content="http://localhost/i?view=rtt&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s"/>
+    <meta name="robots" content="noindex, noffollow"/>
+  </head>
+  <body>
+    <h1>Round Trip Time (RTT) of this Origin(https://example.com/hoge) on all devices as of null</h1>
+    <div>
+      <p>Redirecting to CrUX Vis in 1 second...</p>
+      <p>
+If you are not redirected automatically, please 
+        <a href="https://cruxvis.withgoogle.com/#/?url=https%3A%2F%2Fexample.com%2Fhoge&amp;view=allmetrics&amp;identifier=origin&amp;device=ALL">click here</a>
 .
       </p>
     </div>

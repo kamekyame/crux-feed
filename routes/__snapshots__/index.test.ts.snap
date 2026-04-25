@@ -1,6 +1,6 @@
 export const snapshot = {};
 
-snapshot[`return RSS 1`] = `
+snapshot[`cwvsummary 1`] = `
 '<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
@@ -39,6 +39,270 @@ snapshot[`return RSS 1`] = `
             <guid isPermaLink="false">1772841600000</guid>
             <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[Loading Performance is poor and improving - value: 4131<br>Interactivity is good and stable - value: 78<br>Visual Stability is good and stable - value: 0]]></description>
+        </item>
+    </channel>
+</rss>'
+`;
+
+snapshot[`lcp 1`] = `
+'<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Largest Contentful Paint (LCP) of this Origin(https://example.com) on all devices</title>
+        <link>https://github.com/kamekyame/crux-feed</link>
+        <description></description>
+        <lastBuildDate>Thu, 01 Jan 1970 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <ttl>720</ttl>
+        <atom:link href="http://localhost/?view=lcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Largest Contentful Paint (LCP) of this Origin(https://example.com) on all devices as of 2026-03-28]]></title>
+            <link>http://localhost/r?view=lcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-28</link>
+            <guid isPermaLink="false">1774656000000</guid>
+            <pubDate>Sat, 28 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Largest Contentful Paint (LCP) is good and improving - value: 1155]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Largest Contentful Paint (LCP) of this Origin(https://example.com) on all devices as of 2026-03-21]]></title>
+            <link>http://localhost/r?view=lcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-21</link>
+            <guid isPermaLink="false">1774051200000</guid>
+            <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Largest Contentful Paint (LCP) is good and improving - value: 2163]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Largest Contentful Paint (LCP) of this Origin(https://example.com) on all devices as of 2026-03-14]]></title>
+            <link>http://localhost/r?view=lcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-14</link>
+            <guid isPermaLink="false">1773446400000</guid>
+            <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Largest Contentful Paint (LCP) is needs improvement and improving - value: 3170]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Largest Contentful Paint (LCP) of this Origin(https://example.com) on all devices as of 2026-03-07]]></title>
+            <link>http://localhost/r?view=lcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-07</link>
+            <guid isPermaLink="false">1772841600000</guid>
+            <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Largest Contentful Paint (LCP) is poor and improving - value: 4131]]></description>
+        </item>
+    </channel>
+</rss>'
+`;
+
+snapshot[`inp 1`] = `
+'<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Interaction to Next Paint (INP) of this Origin(https://example.com) on all devices</title>
+        <link>https://github.com/kamekyame/crux-feed</link>
+        <description></description>
+        <lastBuildDate>Thu, 01 Jan 1970 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <ttl>720</ttl>
+        <atom:link href="http://localhost/?view=inp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Interaction to Next Paint (INP) of this Origin(https://example.com) on all devices as of 2026-03-28]]></title>
+            <link>http://localhost/r?view=inp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-28</link>
+            <guid isPermaLink="false">1774656000000</guid>
+            <pubDate>Sat, 28 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Interaction to Next Paint (INP) is good and stable - value: 77]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Interaction to Next Paint (INP) of this Origin(https://example.com) on all devices as of 2026-03-21]]></title>
+            <link>http://localhost/r?view=inp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-21</link>
+            <guid isPermaLink="false">1774051200000</guid>
+            <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Interaction to Next Paint (INP) is good and stable - value: 78]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Interaction to Next Paint (INP) of this Origin(https://example.com) on all devices as of 2026-03-14]]></title>
+            <link>http://localhost/r?view=inp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-14</link>
+            <guid isPermaLink="false">1773446400000</guid>
+            <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Interaction to Next Paint (INP) is good and stable - value: 78]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Interaction to Next Paint (INP) of this Origin(https://example.com) on all devices as of 2026-03-07]]></title>
+            <link>http://localhost/r?view=inp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-07</link>
+            <guid isPermaLink="false">1772841600000</guid>
+            <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Interaction to Next Paint (INP) is good and stable - value: 78]]></description>
+        </item>
+    </channel>
+</rss>'
+`;
+
+snapshot[`cls 1`] = `
+'<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Cumulative Layout Shift (CLS) of this Origin(https://example.com) on all devices</title>
+        <link>https://github.com/kamekyame/crux-feed</link>
+        <description></description>
+        <lastBuildDate>Thu, 01 Jan 1970 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <ttl>720</ttl>
+        <atom:link href="http://localhost/?view=cls&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Cumulative Layout Shift (CLS) of this Origin(https://example.com) on all devices as of 2026-03-28]]></title>
+            <link>http://localhost/r?view=cls&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-28</link>
+            <guid isPermaLink="false">1774656000000</guid>
+            <pubDate>Sat, 28 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cumulative Layout Shift (CLS) is good and stable - value: 0]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Cumulative Layout Shift (CLS) of this Origin(https://example.com) on all devices as of 2026-03-21]]></title>
+            <link>http://localhost/r?view=cls&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-21</link>
+            <guid isPermaLink="false">1774051200000</guid>
+            <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cumulative Layout Shift (CLS) is good and stable - value: 0]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Cumulative Layout Shift (CLS) of this Origin(https://example.com) on all devices as of 2026-03-14]]></title>
+            <link>http://localhost/r?view=cls&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-14</link>
+            <guid isPermaLink="false">1773446400000</guid>
+            <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cumulative Layout Shift (CLS) is good and stable - value: 0]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Cumulative Layout Shift (CLS) of this Origin(https://example.com) on all devices as of 2026-03-07]]></title>
+            <link>http://localhost/r?view=cls&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-07</link>
+            <guid isPermaLink="false">1772841600000</guid>
+            <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cumulative Layout Shift (CLS) is good and stable - value: 0]]></description>
+        </item>
+    </channel>
+</rss>'
+`;
+
+snapshot[`fcp 1`] = `
+'<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>First Contentful Paint (FCP) of this Origin(https://example.com) on all devices</title>
+        <link>https://github.com/kamekyame/crux-feed</link>
+        <description></description>
+        <lastBuildDate>Thu, 01 Jan 1970 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <ttl>720</ttl>
+        <atom:link href="http://localhost/?view=fcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[First Contentful Paint (FCP) of this Origin(https://example.com) on all devices as of 2026-03-28]]></title>
+            <link>http://localhost/r?view=fcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-28</link>
+            <guid isPermaLink="false">1774656000000</guid>
+            <pubDate>Sat, 28 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[First Contentful Paint (FCP) is good and stable - value: 1171]]></description>
+        </item>
+        <item>
+            <title><![CDATA[First Contentful Paint (FCP) of this Origin(https://example.com) on all devices as of 2026-03-21]]></title>
+            <link>http://localhost/r?view=fcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-21</link>
+            <guid isPermaLink="false">1774051200000</guid>
+            <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[First Contentful Paint (FCP) is good and stable - value: 1179]]></description>
+        </item>
+        <item>
+            <title><![CDATA[First Contentful Paint (FCP) of this Origin(https://example.com) on all devices as of 2026-03-14]]></title>
+            <link>http://localhost/r?view=fcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-14</link>
+            <guid isPermaLink="false">1773446400000</guid>
+            <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[First Contentful Paint (FCP) is good but is regressing - value: 1186]]></description>
+        </item>
+        <item>
+            <title><![CDATA[First Contentful Paint (FCP) of this Origin(https://example.com) on all devices as of 2026-03-07]]></title>
+            <link>http://localhost/r?view=fcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-07</link>
+            <guid isPermaLink="false">1772841600000</guid>
+            <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[First Contentful Paint (FCP) is good but is regressing - value: 1149]]></description>
+        </item>
+    </channel>
+</rss>'
+`;
+
+snapshot[`ttfb 1`] = `
+'<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Time to First Byte (TTFB) of this Origin(https://example.com) on all devices</title>
+        <link>https://github.com/kamekyame/crux-feed</link>
+        <description></description>
+        <lastBuildDate>Thu, 01 Jan 1970 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <ttl>720</ttl>
+        <atom:link href="http://localhost/?view=ttfb&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Time to First Byte (TTFB) of this Origin(https://example.com) on all devices as of 2026-03-28]]></title>
+            <link>http://localhost/r?view=ttfb&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-28</link>
+            <guid isPermaLink="false">1774656000000</guid>
+            <pubDate>Sat, 28 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Time to First Byte (TTFB) is needs improvement and stable - value: 883]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Time to First Byte (TTFB) of this Origin(https://example.com) on all devices as of 2026-03-21]]></title>
+            <link>http://localhost/r?view=ttfb&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-21</link>
+            <guid isPermaLink="false">1774051200000</guid>
+            <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Time to First Byte (TTFB) is needs improvement and stable - value: 894]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Time to First Byte (TTFB) of this Origin(https://example.com) on all devices as of 2026-03-14]]></title>
+            <link>http://localhost/r?view=ttfb&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-14</link>
+            <guid isPermaLink="false">1773446400000</guid>
+            <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Time to First Byte (TTFB) is needs improvement but is regressing - value: 904]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Time to First Byte (TTFB) of this Origin(https://example.com) on all devices as of 2026-03-07]]></title>
+            <link>http://localhost/r?view=ttfb&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-07</link>
+            <guid isPermaLink="false">1772841600000</guid>
+            <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Time to First Byte (TTFB) is needs improvement but is regressing - value: 867]]></description>
+        </item>
+    </channel>
+</rss>'
+`;
+
+snapshot[`rtt 1`] = `
+'<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Round Trip Time (RTT) of this Origin(https://example.com) on all devices</title>
+        <link>https://github.com/kamekyame/crux-feed</link>
+        <description></description>
+        <lastBuildDate>Thu, 01 Jan 1970 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <ttl>720</ttl>
+        <atom:link href="http://localhost/?view=rtt&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Round Trip Time (RTT) of this Origin(https://example.com) on all devices as of 2026-03-28]]></title>
+            <link>http://localhost/r?view=rtt&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-28</link>
+            <guid isPermaLink="false">1774656000000</guid>
+            <pubDate>Sat, 28 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Round Trip Time (RTT) is needs improvement and improving - value: 239]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Round Trip Time (RTT) of this Origin(https://example.com) on all devices as of 2026-03-21]]></title>
+            <link>http://localhost/r?view=rtt&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-21</link>
+            <guid isPermaLink="false">1774051200000</guid>
+            <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Round Trip Time (RTT) is needs improvement and improving - value: 244]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Round Trip Time (RTT) of this Origin(https://example.com) on all devices as of 2026-03-14]]></title>
+            <link>http://localhost/r?view=rtt&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-14</link>
+            <guid isPermaLink="false">1773446400000</guid>
+            <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Round Trip Time (RTT) is needs improvement and improving - value: 251]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Round Trip Time (RTT) of this Origin(https://example.com) on all devices as of 2026-03-07]]></title>
+            <link>http://localhost/r?view=rtt&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-07</link>
+            <guid isPermaLink="false">1772841600000</guid>
+            <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Round Trip Time (RTT) is needs improvement and improving - value: 264]]></description>
         </item>
     </channel>
 </rss>'

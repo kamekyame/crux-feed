@@ -5,7 +5,9 @@ import {
   createFeedTitle,
   createQueryRecordOptions,
   getGrowthRateStatus,
+  getMetric,
   parseQueryParams,
+  viewTypeStringMap,
 } from "#/src/utils.ts";
 import { define } from "#/utils.ts";
 import { zip } from "@std/collections/zip";
@@ -82,6 +84,51 @@ export const handler = define.handlers({
           `Loading Performance is ${lcpStatus} ${lspGrowthRateString} - value: ${lcp}`,
           `Interactivity is ${inpStatus} ${inpGrowthRateString} - value: ${inp}`,
           `Visual Stability is ${clsStatus} ${clsGrowthRateString} - value: ${cls}`,
+        ].join("<br>");
+
+        const id = lastDate.date.getTime().toString();
+
+        const redirectPageUrl = new URL(
+          `${reqUrl.origin}/r?${reqUrl.searchParams.toString()}`,
+        );
+        redirectPageUrl.searchParams.set("asof", lastDate.dateString);
+
+        feed.addItem({
+          title: `${feedTitle} as of ${lastDate.dateString}`,
+          id,
+          guid: id,
+          link: redirectPageUrl.href,
+          date: lastDate.date,
+          description,
+        });
+      });
+    } else {
+      const metric = getMetric(res, reqQueryParams.view);
+      const thresholds = getThresholds(metric?.histogramTimeseries ?? []);
+      const data = zip(
+        record.collectionPeriods,
+        metric?.percentilesTimeseries
+          .p75s ?? [],
+      ).toReversed();
+
+      data.forEach((d, i) => {
+        const [period, p75] = d;
+        const lastData = data[i + 1];
+        if (!lastData) return;
+        const [_, lastP75] = lastData;
+
+        const lastDate = convertMetricDate(period.lastDate);
+
+        const value = Number(p75);
+        const valueStatus = getStatus(value, thresholds);
+        const lastValue = Number(lastP75);
+
+        const growthRateString = getGrowthRateStatus(value, lastValue);
+
+        const description = [
+          `${
+            viewTypeStringMap[reqQueryParams.view]
+          } is ${valueStatus} ${growthRateString} - value: ${value}`,
         ].join("<br>");
 
         const id = lastDate.date.getTime().toString();
