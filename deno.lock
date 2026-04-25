@@ -47,14 +47,17 @@
     "npm:chart.js@^4.5.1": "4.5.1",
     "npm:chartjs-plugin-annotation@^3.1.0": "3.1.0_chart.js@4.5.1",
     "npm:colord@^2.9.3": "2.9.3",
-    "npm:crux-api@4": "4.0.0",
+    "npm:crux-api@^4.1.0": "4.1.0",
     "npm:esbuild-wasm@~0.25.11": "0.25.12",
     "npm:esbuild@0.25.7": "0.25.7",
+    "npm:esbuild@~0.25.5": "0.25.7",
     "npm:feed@^5.2.0": "5.2.0",
     "npm:preact-render-to-string@^6.6.3": "6.6.7_preact@10.29.1",
     "npm:preact@^10.28.2": "10.29.1",
     "npm:preact@^10.28.3": "10.29.1",
     "npm:preact@^10.29.0": "10.29.1",
+    "npm:rollup@^4.50.0": "4.60.1",
+    "npm:vite@^7.1.4": "7.3.1",
     "npm:vite@^7.3.1": "7.3.1"
   },
   "jsr": {
@@ -62,7 +65,8 @@
       "integrity": "df629467913adc1f960149fdfa3a3430ba8c20381c310fba096db244e6c3c9f6",
       "dependencies": [
         "jsr:@deno/loader@~0.3.10",
-        "jsr:@std/path@^1.1.1"
+        "jsr:@std/path@^1.1.1",
+        "npm:esbuild@~0.25.5"
       ]
     },
     "@deno/loader@0.3.14": {
@@ -91,8 +95,8 @@
         "jsr:@std/uuid",
         "npm:@opentelemetry/api",
         "npm:@preact/signals@^2.5.1",
-        "npm:esbuild",
         "npm:esbuild-wasm",
+        "npm:esbuild@0.25.7",
         "npm:preact-render-to-string",
         "npm:preact@^10.28.2",
         "npm:preact@^10.28.3"
@@ -110,7 +114,9 @@
         "npm:@babel/core",
         "npm:@babel/preset-react",
         "npm:@mjackson/node-fetch-server",
-        "npm:@prefresh/vite"
+        "npm:@prefresh/vite",
+        "npm:rollup",
+        "npm:vite@^7.1.4"
       ]
     },
     "@std/assert@1.0.19": {
@@ -954,8 +960,8 @@
     "convert-source-map@2.0.0": {
       "integrity": "sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg=="
     },
-    "crux-api@4.0.0": {
-      "integrity": "sha512-c1vLzj11q2bPA7BmRQb5z//ekwObww4ab3ry5lnP5QRDuiwMAJc5ZyUejzVt5oNMPrF9UeSxCIbVJi9ncBHwWw=="
+    "crux-api@4.1.0": {
+      "integrity": "sha512-zyMkSvOFdrwEQYXZUKgZDAmKj61UnHOeNXPZBsR+FjpLLRA8qyZQ/YcW16lseKAVovTobsmYQeOoc+8mhgsbFA=="
     },
     "debug@4.4.3": {
       "integrity": "sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==",
@@ -1219,7 +1225,7 @@
       "npm:chart.js@^4.5.1",
       "npm:chartjs-plugin-annotation@^3.1.0",
       "npm:colord@^2.9.3",
-      "npm:crux-api@4",
+      "npm:crux-api@^4.1.0",
       "npm:feed@^5.2.0",
       "npm:preact@^10.29.0",
       "npm:vite@^7.3.1"

@@ -71,7 +71,7 @@ export function parseQueryParams(searchParams: URLSearchParams) {
 export function createQueryRecordOptions(
   parsedQueryParams: ReturnType<typeof parseQueryParams>,
 ) {
-  const { url: origin, identifier, device } = parsedQueryParams;
+  const { url: origin, identifier, device, view } = parsedQueryParams;
 
   const options: QueryRecordOptions = {};
 
@@ -79,6 +79,16 @@ export function createQueryRecordOptions(
     options.origin = origin;
   } else {
     options.url = origin;
+  }
+
+  switch (view) {
+    case "cwvsummary":
+      options.metrics = [
+        "largest_contentful_paint",
+        "interaction_to_next_paint",
+        "cumulative_layout_shift",
+      ];
+      break;
   }
 
   options.formFactor = device === "ALL" ? "ALL_FORM_FACTORS" : device;

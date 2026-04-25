@@ -20,7 +20,7 @@
     "chart.js": "npm:chart.js@^4.5.1",
     "chartjs-plugin-annotation": "npm:chartjs-plugin-annotation@^3.1.0",
     "colord": "npm:colord@^2.9.3",
-    "crux-api": "npm:crux-api@^4.0.0",
+    "crux-api": "npm:crux-api@^4.1.0",
     "feed": "npm:feed@^5.2.0",
     "fresh": "jsr:@fresh/core@^2.2.2",
     "preact": "npm:preact@^10.29.0",
