@@ -13,6 +13,7 @@ export const supportViewType = [
 export type ViewType = (typeof supportViewType)[number];
 export type IdentifierType = "url" | "origin";
 export type DeviceType = "PHONE" | "TABLET" | "DESKTOP" | "ALL";
+export type DisplayType = "p75s" | "distributions" | "both";
 
 export const viewTypeStringMap: Record<ViewType, string> = {
   cwvsummary: "Core Web Vitals",
@@ -87,6 +88,19 @@ export function parseDeviceTypes(device: string | null): DeviceType {
   }
 }
 
+export function parseDisplayTypes(display: string | null): DisplayType {
+  switch (display) {
+    case "p75s":
+      return "p75s";
+    case "distributions":
+      return "distributions";
+    case "both":
+      return "both";
+    default:
+      return "p75s";
+  }
+}
+
 export function parseQueryParams(searchParams: URLSearchParams) {
   const url = searchParams.get("url");
   if (!url) {
@@ -96,8 +110,9 @@ export function parseQueryParams(searchParams: URLSearchParams) {
   const view = parseViewTypes(searchParams.get("view"));
   const identifier = parseIdentifierTypes(searchParams.get("identifier"));
   const device = parseDeviceTypes(searchParams.get("device"));
+  const display = parseDisplayTypes(searchParams.get("display"));
 
-  return { view, url, identifier, device };
+  return { view, url, identifier, device, display };
 }
 
 export function createQueryRecordOptions(

@@ -89,7 +89,12 @@ export const handler = define.handlers({
       const thresholds = getThresholds(metric?.histogramTimeseries ?? []);
 
       const labels: string[] = [];
-      const series: number[] = [];
+      const p75Series: number[] = [];
+      const distributionsSeries = {
+        good: [] as number[],
+        needsImprovement: [] as number[],
+        poor: [] as number[],
+      };
 
       const lastDataIndex = record.collectionPeriods.findIndex((period) => {
         const lastDate = convertMetricDate(period.lastDate);
@@ -100,15 +105,27 @@ export const handler = define.handlers({
         record.collectionPeriods,
         metric?.percentilesTimeseries
           .p75s ?? [],
-      ).forEach(([period, p75], idx) => {
+        metric?.histogramTimeseries[0]?.densities ?? [],
+        metric?.histogramTimeseries[1]?.densities ?? [],
+        metric?.histogramTimeseries[2]?.densities ?? [],
+      ).forEach(([period, p75, good, needsImprovement, poor], idx) => {
         if (lastDataIndex >= 0 && idx > lastDataIndex) return;
         labels.push(convertMetricDate(period.lastDate).dateString);
-        series.push(normalizeByThreshold(Number(p75), thresholds));
+        p75Series.push(Number(p75));
+        distributionsSeries.good.push(Number(good));
+        distributionsSeries.needsImprovement.push(Number(needsImprovement));
+        distributionsSeries.poor.push(Number(poor));
       });
 
       const png = await createMetricOgImage({
         labels,
-        series,
+        p75Series: reqQueryParams.display === "distributions"
+          ? undefined
+          : p75Series,
+        distributionsSeries: reqQueryParams.display === "p75s"
+          ? undefined
+          : distributionsSeries,
+        thresholds,
         title: viewTypeStringMap[reqQueryParams.view],
       });
 

@@ -61,28 +61,35 @@ snapshot[`lcp 1`] = `
             <link>http://localhost/r?view=lcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-28</link>
             <guid isPermaLink="false">1774656000000</guid>
             <pubDate>Sat, 28 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Largest Contentful Paint (LCP) is good and improving - value: 1155]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced LCP of ≤ 1155]]></description>
         </item>
         <item>
             <title><![CDATA[Largest Contentful Paint (LCP) of this Origin(https://example.com) on all devices as of 2026-03-21]]></title>
             <link>http://localhost/r?view=lcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-21</link>
             <guid isPermaLink="false">1774051200000</guid>
             <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Largest Contentful Paint (LCP) is good and improving - value: 2163]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced LCP of ≤ 2163]]></description>
         </item>
         <item>
             <title><![CDATA[Largest Contentful Paint (LCP) of this Origin(https://example.com) on all devices as of 2026-03-14]]></title>
             <link>http://localhost/r?view=lcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-14</link>
             <guid isPermaLink="false">1773446400000</guid>
             <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Largest Contentful Paint (LCP) is needs improvement and improving - value: 3170]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced LCP of ≤ 3170]]></description>
         </item>
         <item>
             <title><![CDATA[Largest Contentful Paint (LCP) of this Origin(https://example.com) on all devices as of 2026-03-07]]></title>
             <link>http://localhost/r?view=lcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-07</link>
             <guid isPermaLink="false">1772841600000</guid>
             <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Largest Contentful Paint (LCP) is poor and improving - value: 4131]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced LCP of ≤ 4131]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Largest Contentful Paint (LCP) of this Origin(https://example.com) on all devices as of 2026-02-28]]></title>
+            <link>http://localhost/r?view=lcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-02-28</link>
+            <guid isPermaLink="false">1772236800000</guid>
+            <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[75% of all page loads of this origin experienced LCP of ≤ 5041]]></description>
         </item>
     </channel>
 </rss>'
@@ -105,28 +112,35 @@ snapshot[`inp 1`] = `
             <link>http://localhost/r?view=inp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-28</link>
             <guid isPermaLink="false">1774656000000</guid>
             <pubDate>Sat, 28 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Interaction to Next Paint (INP) is good and stable - value: 77]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced INP of ≤ 77]]></description>
         </item>
         <item>
             <title><![CDATA[Interaction to Next Paint (INP) of this Origin(https://example.com) on all devices as of 2026-03-21]]></title>
             <link>http://localhost/r?view=inp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-21</link>
             <guid isPermaLink="false">1774051200000</guid>
             <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Interaction to Next Paint (INP) is good and stable - value: 78]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced INP of ≤ 78]]></description>
         </item>
         <item>
             <title><![CDATA[Interaction to Next Paint (INP) of this Origin(https://example.com) on all devices as of 2026-03-14]]></title>
             <link>http://localhost/r?view=inp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-14</link>
             <guid isPermaLink="false">1773446400000</guid>
             <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Interaction to Next Paint (INP) is good and stable - value: 78]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced INP of ≤ 78]]></description>
         </item>
         <item>
             <title><![CDATA[Interaction to Next Paint (INP) of this Origin(https://example.com) on all devices as of 2026-03-07]]></title>
             <link>http://localhost/r?view=inp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-07</link>
             <guid isPermaLink="false">1772841600000</guid>
             <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Interaction to Next Paint (INP) is good and stable - value: 78]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced INP of ≤ 78]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Interaction to Next Paint (INP) of this Origin(https://example.com) on all devices as of 2026-02-28]]></title>
+            <link>http://localhost/r?view=inp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-02-28</link>
+            <guid isPermaLink="false">1772236800000</guid>
+            <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[75% of all page loads of this origin experienced INP of ≤ 77]]></description>
         </item>
     </channel>
 </rss>'
@@ -149,28 +163,35 @@ snapshot[`cls 1`] = `
             <link>http://localhost/r?view=cls&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-28</link>
             <guid isPermaLink="false">1774656000000</guid>
             <pubDate>Sat, 28 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Cumulative Layout Shift (CLS) is good and stable - value: 0]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced CLS of ≤ 0]]></description>
         </item>
         <item>
             <title><![CDATA[Cumulative Layout Shift (CLS) of this Origin(https://example.com) on all devices as of 2026-03-21]]></title>
             <link>http://localhost/r?view=cls&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-21</link>
             <guid isPermaLink="false">1774051200000</guid>
             <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Cumulative Layout Shift (CLS) is good and stable - value: 0]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced CLS of ≤ 0]]></description>
         </item>
         <item>
             <title><![CDATA[Cumulative Layout Shift (CLS) of this Origin(https://example.com) on all devices as of 2026-03-14]]></title>
             <link>http://localhost/r?view=cls&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-14</link>
             <guid isPermaLink="false">1773446400000</guid>
             <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Cumulative Layout Shift (CLS) is good and stable - value: 0]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced CLS of ≤ 0]]></description>
         </item>
         <item>
             <title><![CDATA[Cumulative Layout Shift (CLS) of this Origin(https://example.com) on all devices as of 2026-03-07]]></title>
             <link>http://localhost/r?view=cls&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-07</link>
             <guid isPermaLink="false">1772841600000</guid>
             <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Cumulative Layout Shift (CLS) is good and stable - value: 0]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced CLS of ≤ 0]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Cumulative Layout Shift (CLS) of this Origin(https://example.com) on all devices as of 2026-02-28]]></title>
+            <link>http://localhost/r?view=cls&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-02-28</link>
+            <guid isPermaLink="false">1772236800000</guid>
+            <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[75% of all page loads of this origin experienced CLS of ≤ 0]]></description>
         </item>
     </channel>
 </rss>'
@@ -193,28 +214,35 @@ snapshot[`fcp 1`] = `
             <link>http://localhost/r?view=fcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-28</link>
             <guid isPermaLink="false">1774656000000</guid>
             <pubDate>Sat, 28 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[First Contentful Paint (FCP) is good and stable - value: 1171]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced FCP of ≤ 1171]]></description>
         </item>
         <item>
             <title><![CDATA[First Contentful Paint (FCP) of this Origin(https://example.com) on all devices as of 2026-03-21]]></title>
             <link>http://localhost/r?view=fcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-21</link>
             <guid isPermaLink="false">1774051200000</guid>
             <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[First Contentful Paint (FCP) is good and stable - value: 1179]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced FCP of ≤ 1179]]></description>
         </item>
         <item>
             <title><![CDATA[First Contentful Paint (FCP) of this Origin(https://example.com) on all devices as of 2026-03-14]]></title>
             <link>http://localhost/r?view=fcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-14</link>
             <guid isPermaLink="false">1773446400000</guid>
             <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[First Contentful Paint (FCP) is good but is regressing - value: 1186]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced FCP of ≤ 1186]]></description>
         </item>
         <item>
             <title><![CDATA[First Contentful Paint (FCP) of this Origin(https://example.com) on all devices as of 2026-03-07]]></title>
             <link>http://localhost/r?view=fcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-07</link>
             <guid isPermaLink="false">1772841600000</guid>
             <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[First Contentful Paint (FCP) is good but is regressing - value: 1149]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced FCP of ≤ 1149]]></description>
+        </item>
+        <item>
+            <title><![CDATA[First Contentful Paint (FCP) of this Origin(https://example.com) on all devices as of 2026-02-28]]></title>
+            <link>http://localhost/r?view=fcp&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-02-28</link>
+            <guid isPermaLink="false">1772236800000</guid>
+            <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[75% of all page loads of this origin experienced FCP of ≤ 1062]]></description>
         </item>
     </channel>
 </rss>'
@@ -237,28 +265,35 @@ snapshot[`ttfb 1`] = `
             <link>http://localhost/r?view=ttfb&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-28</link>
             <guid isPermaLink="false">1774656000000</guid>
             <pubDate>Sat, 28 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Time to First Byte (TTFB) is needs improvement and stable - value: 883]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced TTFB of ≤ 883]]></description>
         </item>
         <item>
             <title><![CDATA[Time to First Byte (TTFB) of this Origin(https://example.com) on all devices as of 2026-03-21]]></title>
             <link>http://localhost/r?view=ttfb&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-21</link>
             <guid isPermaLink="false">1774051200000</guid>
             <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Time to First Byte (TTFB) is needs improvement and stable - value: 894]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced TTFB of ≤ 894]]></description>
         </item>
         <item>
             <title><![CDATA[Time to First Byte (TTFB) of this Origin(https://example.com) on all devices as of 2026-03-14]]></title>
             <link>http://localhost/r?view=ttfb&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-14</link>
             <guid isPermaLink="false">1773446400000</guid>
             <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Time to First Byte (TTFB) is needs improvement but is regressing - value: 904]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced TTFB of ≤ 904]]></description>
         </item>
         <item>
             <title><![CDATA[Time to First Byte (TTFB) of this Origin(https://example.com) on all devices as of 2026-03-07]]></title>
             <link>http://localhost/r?view=ttfb&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-07</link>
             <guid isPermaLink="false">1772841600000</guid>
             <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Time to First Byte (TTFB) is needs improvement but is regressing - value: 867]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced TTFB of ≤ 867]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Time to First Byte (TTFB) of this Origin(https://example.com) on all devices as of 2026-02-28]]></title>
+            <link>http://localhost/r?view=ttfb&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-02-28</link>
+            <guid isPermaLink="false">1772236800000</guid>
+            <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[75% of all page loads of this origin experienced TTFB of ≤ 748]]></description>
         </item>
     </channel>
 </rss>'
@@ -281,28 +316,35 @@ snapshot[`rtt 1`] = `
             <link>http://localhost/r?view=rtt&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-28</link>
             <guid isPermaLink="false">1774656000000</guid>
             <pubDate>Sat, 28 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Round Trip Time (RTT) is needs improvement and improving - value: 239]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced RTT of ≤ 239]]></description>
         </item>
         <item>
             <title><![CDATA[Round Trip Time (RTT) of this Origin(https://example.com) on all devices as of 2026-03-21]]></title>
             <link>http://localhost/r?view=rtt&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-21</link>
             <guid isPermaLink="false">1774051200000</guid>
             <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Round Trip Time (RTT) is needs improvement and improving - value: 244]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced RTT of ≤ 244]]></description>
         </item>
         <item>
             <title><![CDATA[Round Trip Time (RTT) of this Origin(https://example.com) on all devices as of 2026-03-14]]></title>
             <link>http://localhost/r?view=rtt&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-14</link>
             <guid isPermaLink="false">1773446400000</guid>
             <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Round Trip Time (RTT) is needs improvement and improving - value: 251]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced RTT of ≤ 251]]></description>
         </item>
         <item>
             <title><![CDATA[Round Trip Time (RTT) of this Origin(https://example.com) on all devices as of 2026-03-07]]></title>
             <link>http://localhost/r?view=rtt&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-03-07</link>
             <guid isPermaLink="false">1772841600000</guid>
             <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Round Trip Time (RTT) is needs improvement and improving - value: 264]]></description>
+            <description><![CDATA[75% of all page loads of this origin experienced RTT of ≤ 264]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Round Trip Time (RTT) of this Origin(https://example.com) on all devices as of 2026-02-28]]></title>
+            <link>http://localhost/r?view=rtt&amp;url=https%3A%2F%2Fexample.com%2Fhoge&amp;identifier=origin&amp;device=ALL&amp;periodStart=0&amp;periodEnd=-1&amp;display=p75s&amp;asof=2026-02-28</link>
+            <guid isPermaLink="false">1772236800000</guid>
+            <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[75% of all page loads of this origin experienced RTT of ≤ 272]]></description>
         </item>
     </channel>
 </rss>'
