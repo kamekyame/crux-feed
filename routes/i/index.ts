@@ -64,7 +64,7 @@ export const handler = define.handlers({
         record.metrics.cumulative_layout_shift?.percentilesTimeseries
           .p75s ?? [],
       ).forEach(([period, lcpP75, inpP75, clsP75], idx) => {
-        if (lastDataIndex > 0 && idx > lastDataIndex) return;
+        if (lastDataIndex >= 0 && idx > lastDataIndex) return;
         labels.push(convertMetricDate(period.lastDate).dateString);
         lcpSeries.push(normalizeByThreshold(Number(lcpP75), lcpThresholds));
         inpSeries.push(normalizeByThreshold(Number(inpP75), inpThresholds));
@@ -101,7 +101,7 @@ export const handler = define.handlers({
         metric?.percentilesTimeseries
           .p75s ?? [],
       ).forEach(([period, p75], idx) => {
-        if (lastDataIndex > 0 && idx > lastDataIndex) return;
+        if (lastDataIndex >= 0 && idx > lastDataIndex) return;
         labels.push(convertMetricDate(period.lastDate).dateString);
         series.push(normalizeByThreshold(Number(p75), thresholds));
       });

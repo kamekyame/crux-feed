@@ -209,7 +209,7 @@ export async function createMetricOgImage(args: {
       labels,
       datasets: [
         {
-          label: "LCP",
+          label: title,
           data: series,
           pointStyle: "circle",
         },
