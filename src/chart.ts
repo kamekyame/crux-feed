@@ -11,6 +11,7 @@ import {
   Plugin,
   PointElement,
   ScriptableContext,
+  Title,
 } from "chart.js";
 import annotationPlugin from "chartjs-plugin-annotation";
 import { colord } from "colord";
@@ -42,6 +43,7 @@ export function initChart() {
     LineElement,
     LinearScale,
     PointElement,
+    Title,
     Legend,
     annotationPlugin,
     customBackgroundColorPlugin,
@@ -155,6 +157,119 @@ export async function createCwvsummaryOgImage(args: {
               size: 28,
             },
           },
+        },
+        annotation: {
+          common: {
+            drawTime: "beforeDraw",
+          },
+          annotations: {
+            good: {
+              type: "box",
+              yMin: 0,
+              yMax: 30,
+              backgroundColor: colorMap.good.alpha(0.1).toRgbString(),
+              borderWidth: 0,
+            },
+            needsImprovement: {
+              type: "box",
+              yMin: 30,
+              yMax: 60,
+              backgroundColor: colorMap.needsImprovement.alpha(0.1)
+                .toRgbString(),
+              borderWidth: 0,
+            },
+            poor: {
+              type: "box",
+              yMin: 60,
+              yMax: 100,
+              backgroundColor: colorMap.poor.alpha(0.1).toRgbString(),
+              borderWidth: 0,
+            },
+          },
+        },
+      },
+    },
+  });
+  return await canvas.encode("png");
+}
+
+export async function createMetricOgImage(args: {
+  labels: string[];
+  series: number[];
+  title: string;
+}) {
+  const { labels, series, title } = args;
+
+  const canvas = createCanvas(1200, 630);
+
+  // おそらく Canvas の型定義が dom と被っていてエラーになるためキャスト
+  new Chart(canvas as unknown as ChartItem, {
+    type: "line",
+    data: {
+      labels,
+      datasets: [
+        {
+          label: "LCP",
+          data: series,
+          pointStyle: "circle",
+        },
+      ],
+    },
+    options: {
+      datasets: {
+        line: {
+          borderWidth: 2,
+          borderColor: "black",
+          pointBorderWidth: 3,
+          pointRadius: 8,
+          pointBackgroundColor: "white",
+          pointBorderColor: (ctx: ScriptableContext<"line">) => {
+            const value = Number(ctx.raw);
+            if (value <= 30) {
+              return colorMap.good.toHex();
+            } else if (value <= 60) {
+              return colorMap.needsImprovement.toHex();
+            } else {
+              return colorMap.poor.toHex();
+            }
+          },
+        },
+      },
+      layout: {
+        padding: 50,
+      },
+      scales: {
+        y: {
+          display: false,
+          beginAtZero: true,
+          max: Math.max(...series) + 5,
+        },
+        x: {
+          display: true,
+
+          labels: labels.map((label, index) => {
+            if (index === labels.length - 1) return label;
+            return "";
+          }),
+          ticks: {
+            autoSkip: false,
+            maxRotation: 0,
+            minRotation: 0,
+            align: "end",
+            font: { size: 28 },
+          },
+        },
+      },
+      plugins: {
+        title: {
+          display: true,
+          text: title,
+          font: {
+            size: 28,
+          },
+        },
+        legend: {
+          display: false,
         },
         annotation: {
           common: {
