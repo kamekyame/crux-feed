@@ -125,11 +125,6 @@ export const handler = define.handlers({
         const poorValue = (Number(poorDensity) * 100).toFixed(1);
 
         const descriptionList = [];
-        if (reqQueryParams.display !== "distributions") {
-          descriptionList.push(
-            `75% of ${reqQueryParams.device.toLowerCase()} page loads of this origin experienced ${reqQueryParams.view.toUpperCase()} of ≤ ${value}`,
-          );
-        }
         if (reqQueryParams.display !== "p75s") {
           descriptionList.push("");
           descriptionList.push("Among all page loads of this origin,");
@@ -141,6 +136,13 @@ export const handler = define.handlers({
           );
           descriptionList.push(
             `${poorValue}% experienced poor ${reqQueryParams.view.toUpperCase()}`,
+          );
+        }
+        if (reqQueryParams.display !== "distributions") {
+          descriptionList.push(
+            `75% of ${reqQueryParams.device.toLowerCase()} page loads of this ${
+              reqQueryParams.identifier === "origin" ? "origin" : "URL"
+            } experienced ${reqQueryParams.view.toUpperCase()} of ≤ ${value}`,
           );
         }
         const description = descriptionList.join("<br>");
