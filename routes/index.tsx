@@ -128,7 +128,7 @@ export const handler = define.handlers({
         if (reqQueryParams.display !== "p75s") {
           descriptionList.push("");
           descriptionList.push(
-            `Among all page loads of this ${
+            `Among ${reqQueryParams.device.toLowerCase()} page loads of this ${
               reqQueryParams.identifier === "origin" ? "origin" : "URL"
             },`,
           );
