@@ -11,7 +11,6 @@ import {
   createQueryRecordOptions,
   getMetric,
   parseQueryParams,
-  viewTypeStringMap,
 } from "#/src/utils.ts";
 import { define } from "#/utils.ts";
 import { zip } from "@std/collections/zip";
@@ -126,7 +125,7 @@ export const handler = define.handlers({
           ? undefined
           : distributionsSeries,
         thresholds,
-        title: viewTypeStringMap[reqQueryParams.view],
+        view: reqQueryParams.view,
       });
 
       return new Response(Uint8Array.from(png), {

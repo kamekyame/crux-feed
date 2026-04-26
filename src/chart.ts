@@ -16,6 +16,7 @@ import {
 } from "chart.js";
 import annotationPlugin from "chartjs-plugin-annotation";
 import { colord } from "colord";
+import { ViewType, viewTypeStringMap } from "./utils.ts";
 
 const colorMap = {
   good: colord("#0ccf6b"),
@@ -203,9 +204,10 @@ export async function createMetricOgImage(args: {
     poor: number[];
   };
   thresholds: Threshold;
-  title: string;
+  view: ViewType;
 }) {
-  const { labels, p75Series, distributionsSeries, thresholds, title } = args;
+  const { labels, p75Series, distributionsSeries, thresholds, view } = args;
+  const title = viewTypeStringMap[view];
 
   const canvas = createCanvas(1200, 630);
 
@@ -287,7 +289,7 @@ export async function createMetricOgImage(args: {
           ),
           title: {
             display: true,
-            text: "75th Percentile (ms)",
+            text: `75th Percentile${view === "cls" ? "" : " (ms)"}`,
             font: { size: 20 },
           },
           ticks: {
