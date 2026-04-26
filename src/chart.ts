@@ -1,9 +1,9 @@
 import { Threshold } from "#/src/thresholds.ts";
 import { createCanvas, GlobalFonts } from "@napi-rs/canvas";
-import { ChartConfiguration } from "chart.js";
 import {
   CategoryScale,
   Chart,
+  ChartConfiguration,
   ChartItem,
   Legend,
   LinearScale,
