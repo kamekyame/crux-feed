@@ -33,6 +33,9 @@
       "tags": [
         "fresh",
         "recommended"
+      ],
+      "include": [
+        "no-console"
       ]
     }
   },

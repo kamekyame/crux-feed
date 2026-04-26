@@ -7,7 +7,6 @@ import {
   getGrowthRateStatus,
   getMetric,
   parseQueryParams,
-  viewTypeStringMap,
 } from "#/src/utils.ts";
 import { define } from "#/utils.ts";
 import { zip } from "@std/collections/zip";
@@ -104,32 +103,53 @@ export const handler = define.handlers({
       });
     } else {
       const metric = getMetric(res, reqQueryParams.view);
-      const thresholds = getThresholds(metric?.histogramTimeseries ?? []);
       const data = zip(
         record.collectionPeriods,
         metric?.percentilesTimeseries
           .p75s ?? [],
+        metric?.histogramTimeseries[0]?.densities ?? [],
+        metric?.histogramTimeseries[1]?.densities ?? [],
+        metric?.histogramTimeseries[2]?.densities ?? [],
       ).toReversed();
 
-      data.forEach((d, i) => {
-        const [period, p75] = d;
-        const lastData = data[i + 1];
-        if (!lastData) return;
-        const [_, lastP75] = lastData;
+      data.forEach((d) => {
+        const [period, p75, goodDensity, needsImprovementDensity, poorDensity] =
+          d;
 
         const lastDate = convertMetricDate(period.lastDate);
 
         const value = Number(p75);
-        const valueStatus = getStatus(value, thresholds);
-        const lastValue = Number(lastP75);
+        const goodValue = (Number(goodDensity) * 100).toFixed(1);
+        const needsImprovementValue = (Number(needsImprovementDensity) * 100)
+          .toFixed(1);
+        const poorValue = (Number(poorDensity) * 100).toFixed(1);
 
-        const growthRateString = getGrowthRateStatus(value, lastValue);
-
-        const description = [
-          `${
-            viewTypeStringMap[reqQueryParams.view]
-          } is ${valueStatus} ${growthRateString} - value: ${value}`,
-        ].join("<br>");
+        const descriptionList = [];
+        if (reqQueryParams.display !== "p75s") {
+          descriptionList.push("");
+          descriptionList.push(
+            `Among ${reqQueryParams.device.toLowerCase()} page loads of this ${
+              reqQueryParams.identifier === "origin" ? "origin" : "URL"
+            },`,
+          );
+          descriptionList.push(
+            `${goodValue}% experienced good ${reqQueryParams.view.toUpperCase()}`,
+          );
+          descriptionList.push(
+            `${needsImprovementValue}% experienced needs improvement ${reqQueryParams.view.toUpperCase()}`,
+          );
+          descriptionList.push(
+            `${poorValue}% experienced poor ${reqQueryParams.view.toUpperCase()}`,
+          );
+        }
+        if (reqQueryParams.display !== "distributions") {
+          descriptionList.push(
+            `75% of ${reqQueryParams.device.toLowerCase()} page loads of this ${
+              reqQueryParams.identifier === "origin" ? "origin" : "URL"
+            } experienced ${reqQueryParams.view.toUpperCase()} of ≤ ${value}`,
+          );
+        }
+        const description = descriptionList.join("<br>");
 
         const id = lastDate.date.getTime().toString();
 
