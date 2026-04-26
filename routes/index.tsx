@@ -127,7 +127,11 @@ export const handler = define.handlers({
         const descriptionList = [];
         if (reqQueryParams.display !== "p75s") {
           descriptionList.push("");
-          descriptionList.push("Among all page loads of this origin,");
+          descriptionList.push(
+            `Among all page loads of this ${
+              reqQueryParams.identifier === "origin" ? "origin" : "URL"
+            },`,
+          );
           descriptionList.push(
             `${goodValue}% experienced good ${reqQueryParams.view.toUpperCase()}`,
           );
