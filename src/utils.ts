@@ -10,10 +10,13 @@ export const supportViewType = [
   "ttfb",
   "rtt",
 ] as const;
+export const supportIdentifierType = ["origin", "url"] as const;
+export const supportDeviceType = ["ALL", "PHONE", "DESKTOP", "TABLET"] as const;
+export const supportDisplayType = ["p75s", "distributions", "both"] as const;
 export type ViewType = (typeof supportViewType)[number];
-export type IdentifierType = "url" | "origin";
-export type DeviceType = "PHONE" | "TABLET" | "DESKTOP" | "ALL";
-export type DisplayType = "p75s" | "distributions" | "both";
+export type IdentifierType = (typeof supportIdentifierType)[number];
+export type DeviceType = (typeof supportDeviceType)[number];
+export type DisplayType = (typeof supportDisplayType)[number];
 
 export const viewTypeStringMap: Record<ViewType, string> = {
   cwvsummary: "Core Web Vitals",
@@ -25,12 +28,12 @@ export const viewTypeStringMap: Record<ViewType, string> = {
   rtt: "Round Trip Time (RTT)",
 };
 
-const identifierStringMap = {
+const identifierStringMap: Record<IdentifierType, string> = {
   url: "URL",
   origin: "Origin",
 };
 
-const deviceStringMap = {
+const deviceStringMap: Record<DeviceType, string> = {
   PHONE: "phones",
   TABLET: "tablets",
   DESKTOP: "desktops",

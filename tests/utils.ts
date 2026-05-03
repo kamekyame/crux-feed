@@ -3,6 +3,12 @@ import { createAssertSnapshot } from "@std/testing/snapshot";
 import { FakeTime } from "@std/testing/time";
 import { parse, stringify } from "@std/xml";
 import { HistoryResponse } from "crux-api";
+import {
+  supportDeviceType,
+  supportDisplayType,
+  supportIdentifierType,
+  supportViewType,
+} from "../src/utils.ts";
 import { mockData } from "./queryHistoryRecord_example.ts";
 
 export const assertXmlSnapshot = createAssertSnapshot({
@@ -38,4 +44,40 @@ export function historyApiMock(
       time.restore();
     },
   };
+}
+
+export async function queryParamMatrixTest(
+  rootTest: Deno.TestContext,
+  handler: (
+    matrixTest: Deno.TestContext,
+    searchParams: URLSearchParams,
+  ) => Promise<void>,
+) {
+  for await (const view of supportViewType) {
+    await rootTest.step(view, async (viewTest) => {
+      for await (const identifier of supportIdentifierType) {
+        await viewTest.step(identifier, async (identifierTest) => {
+          for await (const device of supportDeviceType) {
+            await identifierTest.step(device, async (deviceTest) => {
+              for await (const display of supportDisplayType) {
+                await deviceTest.step(display, async (test) => {
+                  const searchParams = new URLSearchParams({
+                    view,
+                    url: "https://example.com/hoge",
+                    identifier,
+                    device,
+                    periodStart: "0",
+                    periodEnd: "-1",
+                    display,
+                  });
+
+                  await handler(test, searchParams);
+                });
+              }
+            });
+          }
+        });
+      }
+    });
+  }
 }
