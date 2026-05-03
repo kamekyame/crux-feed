@@ -4,10 +4,14 @@ import { FakeTime } from "@std/testing/time";
 import { parse, stringify } from "@std/xml";
 import { HistoryResponse } from "crux-api";
 import {
+  DeviceType,
+  DisplayType,
+  IdentifierType,
   supportDeviceType,
   supportDisplayType,
   supportIdentifierType,
   supportViewType,
+  ViewType,
 } from "../src/utils.ts";
 import { mockData } from "./queryHistoryRecord_example.ts";
 
@@ -51,6 +55,12 @@ export async function queryParamMatrixTest(
   handler: (
     matrixTest: Deno.TestContext,
     searchParams: URLSearchParams,
+    params: {
+      view: ViewType;
+      identifier: IdentifierType;
+      device: DeviceType;
+      display: DisplayType;
+    },
   ) => Promise<void>,
 ) {
   for await (const view of supportViewType) {
@@ -71,7 +81,12 @@ export async function queryParamMatrixTest(
                     display,
                   });
 
-                  await handler(test, searchParams);
+                  await handler(test, searchParams, {
+                    view,
+                    identifier,
+                    device,
+                    display,
+                  });
                 });
               }
             });

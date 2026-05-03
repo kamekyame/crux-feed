@@ -9,6 +9,8 @@
     "jsr:@fresh/core@^2.2.0": "2.2.2",
     "jsr:@fresh/core@^2.2.2": "2.2.2",
     "jsr:@fresh/plugin-vite@^1.0.8": "1.0.8",
+    "jsr:@img/internal@~0.1.1": "0.1.1",
+    "jsr:@img/png@~0.1.6": "0.1.6",
     "jsr:@std/assert@^1.0.17": "1.0.19",
     "jsr:@std/assert@^1.0.19": "1.0.19",
     "jsr:@std/async@^1.1.0": "1.2.0",
@@ -21,6 +23,7 @@
     "jsr:@std/fmt@^1.0.8": "1.0.9",
     "jsr:@std/fs@^1.0.19": "1.0.23",
     "jsr:@std/fs@^1.0.22": "1.0.23",
+    "jsr:@std/fs@^1.0.23": "1.0.23",
     "jsr:@std/html@^1.0.5": "1.0.5",
     "jsr:@std/http@^1.0.21": "1.0.25",
     "jsr:@std/internal@^1.0.12": "1.0.12",
@@ -52,6 +55,7 @@
     "npm:esbuild@0.25.7": "0.25.7",
     "npm:esbuild@~0.25.5": "0.25.7",
     "npm:feed@^5.2.0": "5.2.0",
+    "npm:pixelmatch@^7.2.0": "7.2.0",
     "npm:preact-render-to-string@^6.6.3": "6.6.7_preact@10.29.1",
     "npm:preact@^10.28.2": "10.29.1",
     "npm:preact@^10.28.3": "10.29.1",
@@ -119,6 +123,15 @@
         "npm:vite@^7.1.4"
       ]
     },
+    "@img/internal@0.1.1": {
+      "integrity": "3f3f58a02d959f913e4715ca1d33064858eb7c32935d351d6357d6bd48b57a70"
+    },
+    "@img/png@0.1.6": {
+      "integrity": "b24db019c96bb0e4fea6a2b1d01c5cc995a56cbc1fe7e40ff77224744e42e37c",
+      "dependencies": [
+        "jsr:@img/internal"
+      ]
+    },
     "@std/assert@1.0.19": {
       "integrity": "eaada96ee120cb980bc47e040f82814d786fe8162ecc53c91d8df60b8755991e",
       "dependencies": [
@@ -149,6 +162,7 @@
     "@std/fs@1.0.23": {
       "integrity": "3ecbae4ce4fee03b180fa710caff36bb5adb66631c46a6460aaad49515565a37",
       "dependencies": [
+        "jsr:@std/internal",
         "jsr:@std/path@^1.1.4"
       ]
     },
@@ -1107,6 +1121,16 @@
     "picomatch@4.0.4": {
       "integrity": "sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A=="
     },
+    "pixelmatch@7.2.0": {
+      "integrity": "sha512-xhcb4yHu9sM/G7foGzoLtXYcC0zHEaOXXjRKhGup0fw78Nf2Tkiapv4EQyMzrbcmQPsllAI7DbFY2UT7PlI9Pg==",
+      "dependencies": [
+        "pngjs"
+      ],
+      "bin": true
+    },
+    "pngjs@7.0.0": {
+      "integrity": "sha512-LKWqWJRhstyYo9pGvgor/ivk2w94eSjE3RGVuzLGlr3NmD8bf7RcYGze1mNdEHRP6TRP6rMuDHk5t44hnTRyow=="
+    },
     "postcss@8.5.8": {
       "integrity": "sha512-OW/rX8O/jXnm82Ey1k44pObPtdblfiuWnrd8X7GJ7emImCOstunGbXUpp7HdBrFQX6rJzn3sPT397Wp5aCwCHg==",
       "dependencies": [
@@ -1215,8 +1239,11 @@
     "dependencies": [
       "jsr:@fresh/core@^2.2.2",
       "jsr:@fresh/plugin-vite@^1.0.8",
+      "jsr:@img/png@~0.1.6",
       "jsr:@std/assert@^1.0.19",
       "jsr:@std/collections@^1.1.6",
+      "jsr:@std/fs@^1.0.23",
+      "jsr:@std/path@^1.1.4",
       "jsr:@std/testing@^1.0.17",
       "jsr:@std/xml@0.1",
       "npm:@napi-rs/canvas-linux-x64-gnu@~0.1.97",
@@ -1227,6 +1254,7 @@
       "npm:colord@^2.9.3",
       "npm:crux-api@^4.1.0",
       "npm:feed@^5.2.0",
+      "npm:pixelmatch@^7.2.0",
       "npm:preact@^10.29.0",
       "npm:vite@^7.3.1"
     ]
