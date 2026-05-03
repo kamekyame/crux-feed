@@ -3,6 +3,16 @@ import { createAssertSnapshot } from "@std/testing/snapshot";
 import { FakeTime } from "@std/testing/time";
 import { parse, stringify } from "@std/xml";
 import { HistoryResponse } from "crux-api";
+import {
+  DeviceType,
+  DisplayType,
+  IdentifierType,
+  supportDeviceType,
+  supportDisplayType,
+  supportIdentifierType,
+  supportViewType,
+  ViewType,
+} from "../src/utils.ts";
 import { mockData } from "./queryHistoryRecord_example.ts";
 
 export const assertXmlSnapshot = createAssertSnapshot({
@@ -38,4 +48,51 @@ export function historyApiMock(
       time.restore();
     },
   };
+}
+
+export async function queryParamMatrixTest(
+  rootTest: Deno.TestContext,
+  handler: (
+    matrixTest: Deno.TestContext,
+    searchParams: URLSearchParams,
+    params: {
+      view: ViewType;
+      identifier: IdentifierType;
+      device: DeviceType;
+      display: DisplayType;
+    },
+  ) => Promise<void>,
+) {
+  for await (const view of supportViewType) {
+    await rootTest.step(view, async (viewTest) => {
+      for await (const identifier of supportIdentifierType) {
+        await viewTest.step(identifier, async (identifierTest) => {
+          for await (const device of supportDeviceType) {
+            await identifierTest.step(device, async (deviceTest) => {
+              for await (const display of supportDisplayType) {
+                await deviceTest.step(display, async (test) => {
+                  const searchParams = new URLSearchParams({
+                    view,
+                    url: "https://example.com/hoge",
+                    identifier,
+                    device,
+                    periodStart: "0",
+                    periodEnd: "-1",
+                    display,
+                  });
+
+                  await handler(test, searchParams, {
+                    view,
+                    identifier,
+                    device,
+                    display,
+                  });
+                });
+              }
+            });
+          }
+        });
+      }
+    });
+  }
 }
